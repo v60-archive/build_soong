@@ -166,6 +166,11 @@ var (
 	highmemPool = blueprint.NewBuiltinPool("highmem_pool")
 )
 
+// HighmemPool returns the pool used to limit processes that need significant RAM.
+func HighmemPool() blueprint.Pool {
+	return highmemPool
+}
+
 func init() {
 	pctx.Import("github.com/google/blueprint/bootstrap")
 
